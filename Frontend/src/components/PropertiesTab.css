@@ -37,7 +37,7 @@
 .bedrooms-filter select {
   width: 100%;
   padding: 8px 10px;
-  border: 1px solid #ddd;
+  border: none;
   border-radius: 4px;
   font-size: 13px;
   /* color: #333; */
@@ -52,7 +52,7 @@
 .area-inputs input {
   flex: 1;
   padding: 8px 10px;
-  border: 1px solid #ddd;
+  border: none;
   border-radius: 4px;
   font-size: 13px;
   background-color: #ffffff;
@@ -71,6 +71,8 @@
 input[type="checkbox"] {
   margin-right: 5px;
   background-color: #ffffff;
+  border: none;
+  outline: none;
 }
 
 .apply-filters {

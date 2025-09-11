@@ -121,6 +121,8 @@ const Properties = () => {
     });
   };
 
+  const [layout, setLayout] = useState('grid');
+
   return (
     <div className="properties-container">
       <div className="properties-header">
@@ -210,14 +212,14 @@ const Properties = () => {
             <h4>Area (sq ft)</h4>
             <div className="range-inputs">
               <input 
-                type="text" 
+                type="number" 
                 placeholder="Min" 
                 name="minArea"
                 onChange={handleFilterChange}
               />
               <span>-</span>
               <input 
-                type="text" 
+                type="number" 
                 placeholder="Max" 
                 name="maxArea"
                 onChange={handleFilterChange}
@@ -280,9 +282,13 @@ const Properties = () => {
                 <option>Square Feet</option>
               </select>
             </div>
+            <div className="layout-toggle">
+              <button className={layout === 'grid' ? 'active' : ''} onClick={() => setLayout('grid')}>Grid</button>
+              <button className={layout === 'list' ? 'active' : ''} onClick={() => setLayout('list')}>List</button>
+            </div>
           </div>
           
-          <div className="property-cards">
+          <div className={`property-cards ${layout}`}>
             {properties.map(property => (
               <div className="property-card" key={property.id}>
                 <div className="property-image">

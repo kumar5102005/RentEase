@@ -9,17 +9,17 @@
 .profile-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 24px;
+  align-items: flex-start;
+  padding: 30px;
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-  margin-bottom: 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .profile-avatar-section {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
 }
 
@@ -53,6 +53,7 @@
 .profile-info p {
   margin: 0 0 10px 0;
   color: #666;
+  font-size: 16px;
 }
 
 .profile-meta {
@@ -60,6 +61,7 @@
   gap: 15px;
   font-size: 14px;
   color: #777;
+  margin-top: 5px;
 }
 
 .calendar-icon::before {
@@ -76,14 +78,13 @@
   background-color: #fff;
   color: #4a90e2;
   border: 1px solid #4a90e2;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 8px 16px;
   font-size: 14px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 6px;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .edit-profile-btn:hover { background-color: #2f6de0; color: #fff; border-color: #2f6de0; }
@@ -100,64 +101,35 @@
   gap: 10px;
 }
 
-.info-display {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.info-row {
-  display: flex;
-  align-items: baseline;
-}
-
-.info-label {
-  width: 140px;
-  font-weight: 500;
-  color: #344054;
-}
-
-.info-value {
-  color: #1f2937;
-}
-
 .cancel-btn {
   background-color: #fff;
   color: #666;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 16px;
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cancel-btn:hover { background-color: #f5f5f5; }
+.cancel-btn:hover { background-color: #2f6de0; color: #fff; border-color: #2f6de0; }
 .cancel-btn:focus,
 .cancel-btn:active { outline: none; box-shadow: none; }
-
-.cancel-icon::before {
-  content: '✕';
-}
 
 .save-btn {
   background-color: #4a90e2;
   color: white;
   border: 1px solid #4a90e2;
-  border-radius: 8px;
-  padding: 10px 16px;
+  border-radius: 4px;
+  padding: 8px 16px;
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.save-btn:hover { background-color: #2f6de0; border-color: #2f6de0; }
+.save-btn:hover { background-color: #2f6de0; color: #fff; border-color: #2f6de0; }
 .save-btn:focus,
 .save-btn:active { outline: none; box-shadow: none; }
 
@@ -212,13 +184,19 @@
 
 .profile-content {
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .info-section {
-  margin-bottom: 24px;
+  margin-bottom: 30px;
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .info-section h3 {
@@ -232,20 +210,30 @@
 .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 25px;
+}
+
+.info-item {
+  margin-bottom: 5px;
+}
+
+.profile-container:not(.editing) .info-item {
+  margin-bottom: 15px;
 }
 
 .info-item label {
   display: block;
   font-size: 14px;
   color: #777;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-weight: 500;
 }
 
 .info-item p {
   font-size: 16px;
   color: #333;
-  margin: 0;
+  margin: 0 0 5px 0;
+  line-height: 1.4;
 }
 
 .edit-input {
@@ -267,10 +255,12 @@
 
 /* When not in edit mode, use text blocks */
 .profile-container:not(.editing) .info-item p {
-  background-color: #f7f8fa;
-  padding: 10px 12px;
-  border: 1px solid #eee;
-  border-radius: 6px;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  color: #333;
 }
 
 /* Header actions */
@@ -289,8 +279,18 @@
 .form-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 12px;
-  margin-top: 24px;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.form-help-text {
+  color: #777;
+  font-size: 14px;
+  margin-right: auto;
 }
 
 /* Responsive adjustments */
@@ -300,9 +300,14 @@
     align-items: flex-start;
   }
   
-  .edit-profile-btn {
+  .profile-actions {
     margin-top: 15px;
-    align-self: flex-end;
+    align-self: flex-start;
+    width: 100%;
+  }
+  
+  .info-section {
+    width: 100%;
   }
   
   .info-grid {

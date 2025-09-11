@@ -69,7 +69,6 @@ const ProfilePage = () => {
       <div className="profile-header">
         <div className="profile-avatar-section">
           <div className="profile-avatar">
-            {/* Placeholder for avatar */}
             <div className="avatar-placeholder"></div>
           </div>
           <div className="profile-info">
@@ -81,11 +80,17 @@ const ProfilePage = () => {
             </div>
           </div>
         </div>
-        {!isEditing && (
-          <button className="edit-profile-btn" onClick={toggleEditMode}>
-            <i className="edit-icon"></i> Edit Profile
-          </button>
-        )}
+        <div className="profile-actions">
+          {isEditing ? (
+            <button className="cancel-btn" onClick={handleCancel}>
+              Cancel
+            </button>
+          ) : (
+            <button className="edit-profile-btn" onClick={toggleEditMode}>
+              <i className="edit-icon"></i> Edit Profile
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="profile-tabs">
@@ -200,17 +205,12 @@ const ProfilePage = () => {
             <div className="info-item">
               <label>Country</label>
               {isEditing ? (
-                <select 
+                <input 
+                  type="text" 
                   value={userData.address.country} 
                   onChange={(e) => handleInputChange(e, 'address', 'country')} 
                   className="edit-input"
-                >
-                  <option value="United States">United States</option>
-                  <option value="Canada">Canada</option>
-                  <option value="United Kingdom">United Kingdom</option>
-                  <option value="Australia">Australia</option>
-                  <option value="Other">Other</option>
-                </select>
+                />
               ) : (
                 <p>{userData.address.country}</p>
               )}
@@ -220,8 +220,9 @@ const ProfilePage = () => {
 
         {isEditing && (
           <div className="form-actions">
-            <button className="cancel-btn" onClick={handleCancel}><i className="cancel-icon"></i> Cancel</button>
+            <button className="cancel-btn" onClick={handleCancel}>Cancel</button>
             <button className="save-btn" onClick={handleSaveChanges}><i className="save-icon"></i> Save Changes</button>
+            <div className="form-help-text">All changes will be saved immediately</div>
           </div>
         )}
         </>
