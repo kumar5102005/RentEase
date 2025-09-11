@@ -1,0 +1,253 @@
+/* PropertiesTab.css */
+.properties-tab {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Filters Section */
+.filters-section {
+  padding: 20px;
+  border-right: 1px solid #eee;
+  background-color: white;
+}
+
+.filters-section h3 {
+  font-size: 14px;
+  /* color: #333; */
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.price-filter,
+.bedrooms-filter,
+.area-filter,
+.amenities-filter {
+  margin-bottom: 20px;
+}
+
+.price-filter select,
+.bedrooms-filter select {
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  /* color: #333; */
+  background-color: #ffffff;
+}
+
+.area-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.area-inputs input {
+  flex: 1;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  background-color: #ffffff;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+}
+
+.apply-filters {
+  width: 100%;
+  padding: 10px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.apply-filters:hover {
+  background-color: #3a7fcf;
+}
+
+.properties-tab-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px 20px 20px 0;
+}
+
+.property-tab-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eee;
+}
+
+.property-tab-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.property-tab-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.property-tab-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.property-tab-card:hover .property-tab-image img {
+  transform: scale(1.05);
+}
+
+.property-tab-price {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #4a90e2;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.property-availability {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff5a5f;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.property-tab-details {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.property-tab-details h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+}
+
+.property-tab-address {
+  color: #666;
+  font-size: 14px;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.location-icon {
+  color: #4a90e2;
+  font-size: 14px;
+}
+
+.property-tab-features {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  color: #555;
+  font-size: 14px;
+}
+
+.property-tab-features span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.icon-bed::before {
+  content: '🛏️';
+}
+
+.icon-bath::before {
+  content: '🛁';
+}
+
+.icon-size::before {
+  content: '📏';
+}
+
+.property-tab-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.property-tag {
+  background-color: #f0f7ff;
+  color: #4a90e2;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.view-details-btn {
+  margin-top: auto;
+  padding: 10px 0;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.view-details-btn:hover {
+  background-color: #3a7fcf;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .properties-tab-grid {
+    grid-template-columns: 1fr;
+  }
+}

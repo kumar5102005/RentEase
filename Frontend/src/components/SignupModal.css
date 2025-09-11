@@ -1,0 +1,148 @@
+.signup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.signup-dialog {
+  width: 720px;
+  max-width: calc(100% - 32px);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  padding: 24px 24px 16px;
+  position: relative;
+  font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.signup-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #8a8f98;
+  cursor: pointer;
+}
+
+.signup-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 6px 0 8px;
+}
+
+.signup-step {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: #2F54EB;
+  background: #E6F0FF;
+}
+
+.signup-step.active {
+  color: #fff;
+  background: #2F54EB;
+}
+
+.signup-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #16181d;
+  margin: 6px 0 6px;
+}
+
+.signup-subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #5b6270;
+  margin: 0 0 18px;
+}
+
+.signup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.signup-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.signup-field label {
+  font-size: 13px;
+  color: #414856;
+  font-weight: 600;
+}
+
+.signup-field input[type="text"],
+.signup-field input[type="email"],
+.signup-field input[type="password"],
+.signup-field input[type="tel"] {
+  height: 42px;
+  border: 1px solid #d9dde5;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.signup-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn-primary {
+  background: #2F54EB;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #2F54EB;
+  border: 1px solid #2F54EB;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.signup-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.signup-checks label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #414856;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .signup-grid { grid-template-columns: 1fr; }
+}
+
+
